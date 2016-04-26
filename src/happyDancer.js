@@ -1,6 +1,6 @@
 var makeHappyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);  
-  this.$node = $('<span class="happyDancer"></span>');
+  this.$node = $('<span class="happyDancer"></span>').prepend('<img src="images/cammy.gif" height="290" width="350"/>');
   this.setPosition(top, left);
   
 };
@@ -10,7 +10,7 @@ makeHappyDancer.prototype.constructor = makeHappyDancer;
 
 makeHappyDancer.prototype.step = function(timeBetweenSteps) {
   makeDancer.prototype.step.call(this, timeBetweenSteps);
-  this.$node.toggle();
+  // this.$node.toggle();
 };
 
 
