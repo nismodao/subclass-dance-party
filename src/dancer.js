@@ -1,8 +1,7 @@
 // Creates and returns a new dancer object that can step
 var makeDancer = function(top, left, timeBetweenSteps) {
-
   // this.dancer = {};
-
+  this.timeBetweenSteps = timeBetweenSteps;
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
 
@@ -11,9 +10,10 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   //   // it just schedules the next step
   //   setTimeout(dancer.step, timeBetweenSteps);
   // };
-  console.log('the context of this is', this);
-  console.log('this step is ', this.step);
+  // console.log('the context of this is', is);
+  // console.log('this step is ', this.step);
   this.step();
+
 
   // dancer.setPosition = function(top, left) {
   //   // Use css top and left properties to position our <span> tag
@@ -34,17 +34,46 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function () {
-  setTimeout(function () {
-    this.step.call(this);
-  }, timeBetweenSteps);
+  // console.log('the value of this is', this);
+  
+  var context = this;
+  setTimeout(function () { context.step(); }, this.timeBetweenSteps);
+  //console.log('the value of this #2 is', this);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
-  console.log(this);
   var styleSettings = {
     top: top,
     left: left
   };
   this.$node.css(styleSettings);
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

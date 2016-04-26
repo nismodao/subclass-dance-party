@@ -1,5 +1,5 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  console.log('makeBlinkyDancer', this);
+  // console.log('makeBlinkyDancer', this);
   makeDancer.call(this, top, left, timeBetweenSteps);
 
   //this.blinkyDancer = makeDancer(top, left, timeBetweenSteps);
@@ -7,7 +7,8 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 
-  //this.oldStep = this.step;
+  // this.oldStep = this.step;
+
 
   // blinkyDancer.step = function() {
   //   // call the old version of step at the beginning of any call to this new version of step
@@ -17,14 +18,16 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   //   // other effects you can use on a jQuery-wrapped html tag.
   //   blinkyDancer.$node.toggle();
   // };
+
+  
 };
 
 makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
 makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
 
-makeBlinkyDancer.prototype.step = function() {
-    
-  makeDancer.prototype.step.call(this);
+makeBlinkyDancer.prototype.step = function(timeBetweenSteps) {
+  // var that = this;
+  makeDancer.prototype.step.call(this, timeBetweenSteps);
   this.$node.toggle();
 };
 
