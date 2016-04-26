@@ -45,15 +45,17 @@ $(document).ready(function() {
 
   $('.lineUp').on('click', function(event) {
     var line = {
-      top: '0px',
+      top: '600px',
       left: '30px'
     };
     
     for (var i = 0; i < window.dancers.length; i++) {
       line.left = (parseInt(line.left) + 50) + 'px';
+      window.dancers[i].stop(true, true, true);
       window.dancers[i].animate(line);
-    }
+    } 
   });
+
 });
 
 
