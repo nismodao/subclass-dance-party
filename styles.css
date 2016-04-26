@@ -3,13 +3,13 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url(images/df.jpg);
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton, .addDancerButtonOne{
+.title, .addDancerButton, .addDancerButtonOne, .addDancerButtonTwo, .lineUp{
   padding:5px 12px;
   float:right;
 }
@@ -26,7 +26,17 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .dejeDancer{
-  border:10px solid blue;
+  background-image: url(images/indian.jpg);
+  border:30px solid blue;
   border-radius:10px;
   position: absolute;
+  background-size: 80px 60px;
+  
+}
+.happyDancer{
+  border:10px solid green;
+  position: absolute;
+}
+.div {
+
 }
