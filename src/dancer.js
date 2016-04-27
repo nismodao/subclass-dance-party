@@ -4,11 +4,16 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.$node = $('<span class="dancer"></span>');
   this.step();
   this.setPosition(top, left);
-};
+  this.something;
+
+//   if (window.dancers.length > 2) this.collide();
+// };
+}
 
 makeDancer.prototype.step = function () {
   var context = this;
-  setTimeout(function () { context.step(); }, this.timeBetweenSteps);
+  var clearID = setTimeout(function () { context.step(); }, this.timeBetweenSteps);
+  this.something = clearID;//clearTimeout(clearID);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
@@ -18,6 +23,8 @@ makeDancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+
 
 
 

@@ -22,15 +22,16 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  /*border:10px solid red;
-  border-radius:10px;*/
+  border: 1px solid transparent;
   position:absolute;
 }
 .dejeDancer{
   position: absolute;
+  border: 1px solid transparent;
 }
 .happyDancer{
   position: absolute;
+  border: 1px solid transparent;
 }
     
 }

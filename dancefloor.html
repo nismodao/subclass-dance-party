@@ -10,6 +10,9 @@
     <script src="src/happyDancer.js"></script>
   </head>
   <body>
+  
+   <audio src="audio/ryu.mp3" autoplay loop></audio>
+  
     <div class="topbar">
       <span class="title">object dance party</span>
       
@@ -25,6 +28,11 @@
 
 
 
-    <script src="src/init.js"></script>
+    <script src="src/init.js">
+      $('.dancer').on('click', function() {
+    alert('yo');
+  });
+
+    </script>
   </body>
 </html>

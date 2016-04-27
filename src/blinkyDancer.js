@@ -5,8 +5,9 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   
   context = this.$node;
   this.$node.on('click', function (event) {
-    context.stop(true, true,true);
+    context.stop(true, true);
     //context.animate({left: '100px'});
+
   });
 };
 
@@ -17,10 +18,9 @@ makeBlinkyDancer.prototype.step = function(timeBetweenSteps) {
   
   makeDancer.prototype.step.call(this, timeBetweenSteps);
   var random = Math.random() * 1000 + 'px';
-  this.$node.animate({left: random}, 1000, 'linear');
-  // .animate({top: random}, 1000, 'linear')
-  // .animate({bottom: random}, 1000, 'linear')
-  
+  this.$node.animate({left: random}, 1000, 'linear')
+  .animate({top: random}, 1000, 'linear')
+  .animate({bottom: random}, 1000, 'linear');
 
 };
 
